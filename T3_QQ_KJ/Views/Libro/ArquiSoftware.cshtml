@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #C0C0C0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .libro {
+            display: flex;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+            .libro img {
+                max-width: 150px;
+                margin-right: 10px;
+            }
+
+            .libro .descripcion {
+                flex: 1;
+            }
+    </style>
+</head>
+<body>
+    <h1>Libros de Arquitectura de Software</h1>
+
+    <div class="libro">
+        <img src="/images/clean.jpg" alt="Clean Architecture" />
+        <div class="descripcion">
+            <p>Robert C. Martin (Uncle Bob) explora principios y patrones de diseño para crear arquitecturas de software robustas y mantenibles.</p>
+        </div>
+    </div>
+
+    <div class="libro">
+        <img src="~/images/dom.jpg" alt="Domain-Driven Design" />
+        <div class="descripcion">
+            <p>Eric Evans presenta cómo diseñar software basado en el dominio del problema, utilizando un lenguaje ubicuo y modelos ricos.</p>
+        </div>
+    </div>
+
+</body>
+</html>

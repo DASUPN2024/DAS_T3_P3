@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #C0C0C0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .libro {
+            display: flex;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #fff;
+        }
+
+            .libro img {
+                max-width: 150px;
+                margin-right: 10px;
+            }
+
+            .libro .descripcion {
+                flex: 1;
+            }
+    </style>
+</head>
+<body>
+    <h1>Libros de Diseño de Software</h1>
+
+    <div class="libro">
+        <img src="~/images/pat.jpg" alt="Patterns of Enterprise Application Architecture" />
+        <div class="descripcion">
+            <p>Martin Fowler presenta patrones y técnicas para diseñar aplicaciones empresariales robustas y escalables.</p>
+        </div>
+    </div>
+
+    <div class="libro">
+        <img src="~/images/re.jpg" alt="Refactoring" />
+        <div class="descripcion">
+            <p>Martin Fowler explica cómo mejorar el diseño de software existente mediante técnicas de refactorización.</p>
+        </div>
+    </div>
+
+</body>
+</html>

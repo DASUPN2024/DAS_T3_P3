@@ -1,0 +1,122 @@
+﻿@model IEnumerable<T3_QQ_KJ.Models.Libro>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-color: #e0f7fa; 
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        background-color: #ffffff; 
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #006064; 
+    }
+
+    .btn-primary {
+        background-color: #00796b; 
+        border-color: #00796b;
+    }
+
+    .btn-primary:hover {
+        background-color: #004d40; 
+        border-color: #004d40;
+    }
+
+    .table {
+        background-color: #fafafa; 
+        border: 1px solid #ddd;
+    }
+
+    .table th {
+        background-color: #00796b; 
+        color: #fff;
+    }
+
+    .table td {
+        color: #333;
+    }
+
+    .btn-group .btn-primary {
+        background-color: #00796b; 
+        border-color: #00796b;
+    }
+
+    .btn-group .btn-primary:hover {
+        background-color: #004d40; 
+        border-color: #004d40;
+    }
+
+    .btn-group .btn-danger {
+        background-color: #d32f2f; 
+        border-color: #d32f2f;
+    }
+
+    .btn-group .btn-danger:hover {
+        background-color: #b71c1c; 
+        border-color: #b71c1c;
+    }
+</style>
+
+<div class="container pt-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2>Lista de Libros</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Libro" asp-action="Crear" class="btn btn-primary">Agregar Libro</a>
+        </div>
+    </div>
+
+    <br />
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Tema</th>
+                    <th>Editorial</th>
+                    <th>Año Publicación</th>
+                    <th>Páginas</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Titulo</td>
+                        <td>@item.Autor</td>
+                        <td>@item.Tema</td>
+                        <td>@item.Editorial</td>
+                        <td>@item.AnioPublicacion</td>
+                        <td>@item.Paginas</td>
+                        <td>@item.Categoria</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a asp-controller="Libro" asp-action="Editar" asp-route-Id="@item.Id" class="btn btn-primary mx-1">Editar</a>
+                                <a asp-controller="Libro" asp-action="Eliminar" asp-route-Id="@item.Id" class="btn btn-danger mx-1">Eliminar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No hay registros de Libros</p>
+    }
+</div>
